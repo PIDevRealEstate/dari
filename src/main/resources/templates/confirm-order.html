@@ -53,15 +53,13 @@
                                         <span class="subheading" th:text="${subTitle}"></span>
                                         <h2> </h2>
                                         <p style="color: #000" th:text="${message}"></p>
-                                        <a th:href="${orderId}"></a>
+                                        <p> Your Order Identifier is:</p>
+                                        <p th:text="${orderId}"></p>
+                                        <p>The Total Price:</p>
+                                        <p th:text="${totalPrice}"></p>
                                     </div>
                                     <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-                                        <tr>
-                                        <tr th:each="savedOrder : ${savedOrder}">
-            							<td th:text="${savedOrder.getId()}"></td>
-            							<td th:text="${savedOrder.getTotalPrice()}">Text ...</td>
-       									</tr>
-
+                                        
                                             <td valign="top" width="50%" style="padding-top: 20px;">
                                                 <table role="presentation" cellspacing="0" cellpadding="0" border="0"
                                                     width="100%">

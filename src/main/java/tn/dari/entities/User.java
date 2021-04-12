@@ -14,7 +14,7 @@ public class User {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private long id;
+	private int id;
 	
 	private String firstName;
 	private String lastName;
@@ -24,7 +24,7 @@ public class User {
 	@ManyToMany
 	private List<Furniture> favoris;
 	
-	public User(long id, String firstName, String lastName, String email, String password,List<Furniture> favoris) {
+	public User(int id, String firstName, String lastName, String email, String password,List<Furniture> favoris) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
@@ -37,11 +37,11 @@ public class User {
 		
 	}
 
-	public long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

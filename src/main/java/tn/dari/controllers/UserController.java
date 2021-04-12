@@ -3,6 +3,7 @@ package tn.dari.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import tn.dari.entities.Furniture;
 import tn.dari.entities.OrderFurnitureEntity;
+import tn.dari.entities.User;
 import tn.dari.services.UserService;
 
 @RestController
@@ -31,6 +33,10 @@ public class UserController {
 		}
 		return new ResponseEntity<>("Furniture already Exist .", HttpStatus.ALREADY_REPORTED);
 		
+	}
+	@GetMapping("/details/{userId}")
+	public User findUserById(@PathVariable int userId) {
+		return this.userService.getUserById(userId);
 	}
 	
 }

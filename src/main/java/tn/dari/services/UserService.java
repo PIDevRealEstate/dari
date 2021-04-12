@@ -6,5 +6,6 @@ import tn.dari.entities.User;
 public interface UserService {
 	
 	public boolean addFavoriteFurniture(Furniture furniture, int userId);
+	public User getUserById(int userId);
 
 }

@@ -44,8 +44,10 @@ public class OrderFurnitureController {
 	@PostMapping("/addOrders")
 	@ResponseBody
 	public  ResponseEntity<String>  addOrders(@RequestBody OrderFurnitureEntity orderFurnitureEntity ) 
-	{
-		orderFservice.addOrders(orderFurnitureEntity);
+	{	OrderFurnitureEntity result = orderFservice.addOrders(orderFurnitureEntity);
+	if(result == null) {
+		return new ResponseEntity<>("Order failed to be added.", HttpStatus.FORBIDDEN);
+	}
 		return new ResponseEntity<>("Order added successefully.", HttpStatus.CREATED);
 		
 	}

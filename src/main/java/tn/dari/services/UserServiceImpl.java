@@ -17,13 +17,18 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public boolean addFavoriteFurniture(Furniture furniture, int userId) {
 		User user= userRepo.getOne(userId);
-		if(!user.getFavoris().contains(furniture)) {
+		if(!user.getFavoris().stream().anyMatch(el-> el.getId() == furniture.getId())) {
 			user.getFavoris().add(furniture);
-			
+			userRepo.save(user);
 			return true;
 		}
 		
 		return false;
+	}
+
+	@Override
+	public User getUserById(int userId) {
+		return this.userRepo.findById(userId).get();
 	}
 
 }

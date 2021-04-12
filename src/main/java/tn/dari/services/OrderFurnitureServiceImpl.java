@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import javax.mail.internet.MimeMessage;
 
@@ -17,6 +18,7 @@ import org.thymeleaf.spring5.SpringTemplateEngine;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import tn.dari.entities.OrderFurnitureEntity;
+import tn.dari.repositories.FurnitureRepository;
 import tn.dari.repositories.OrderFurnitureRepository;
 
 @Service
@@ -29,6 +31,9 @@ public class OrderFurnitureServiceImpl implements OrderFurnitureService {
 	ResourceLoader resourceloader;
 	
 	@Autowired
+	FurnitureRepository furnitureRepo;
+	
+	@Autowired
 	private SpringTemplateEngine templateEngine;
 	
 	@Autowired
@@ -38,6 +43,13 @@ public class OrderFurnitureServiceImpl implements OrderFurnitureService {
 
 	@Override
 	public OrderFurnitureEntity addOrders(OrderFurnitureEntity order) {
+		for (int i = 0; i < order.getFurnitures().size(); i++) {
+			if(!furnitureRepo.existsById(order.getFurnitures().entrySet().stream().map(Map.Entry::getValue).collect(Collectors.toList()).get(i).getId()) ) {
+				return null;
+			
+			}
+			
+		}
 		order.getFurnitures().forEach((k,v)->{
 			totalPrice += (v.getPrice()*k);
 		});
