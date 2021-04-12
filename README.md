@@ -6,6 +6,11 @@ this our project version 0.0.1
 ---
 
 # To Do
-	* [ ] Create Entities and check ORM database 
-	* [ ] Create User Management 
-	* [ ] Create 
+	* [x] Create Entities and check ORM database 
+	* [x] Create User Management 
+	* [x] Create claim Entity
+	* [x] CRUD for claims 
+	* [ ] Advanced Filters ~ In Progress 
+	* [ ] Promotion
+	* [ ] points fidelité
+ 
