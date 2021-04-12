@@ -1,6 +1,7 @@
 package tn.dari.entities;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,6 +11,10 @@ import javax.persistence.Id;
 public class ReplyClaim extends Claim implements Serializable  {
 	
 	
+	public ReplyClaim(int idClaim, String objectOfClaim, String description, Date dateOfClaim, ClaimType typeClaim) {
+		super(idClaim, objectOfClaim, description, typeClaim);
+		// TODO Auto-generated constructor stub
+	}
 	private int idReply ; 
 	private String comment ;
 	

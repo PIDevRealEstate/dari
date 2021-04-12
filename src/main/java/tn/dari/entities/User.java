@@ -15,29 +15,39 @@ import javax.persistence.OneToOne;
 
 @Entity
 public  class User implements Serializable {
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int idUser ;  
+
 	@Column(nullable = false , unique = true , length = 45)
 	private String email ; 
+	
 	@Column(nullable = false ,  length = 20)
 	private String password ; 
+	
 	@Column(nullable = false ,  length = 20)
 	private String firstName ; 
+	
 	@Column(nullable = false ,  length = 20)
 	private String lastName ;
+	
 	@Enumerated(EnumType.STRING)
 	private Role role ;
 	
 	@OneToMany
 	private List<Pub> pubs ; 
+	
 	@OneToMany
 	private List<CreditCard> creditCards ; 
+	
 	@OneToMany
 	private List<Claim> claims ;
+	
 	@OneToOne
 	private Subscription subscription ;
-	@OneToMany
+	
+	@OneToMany(mappedBy="user")
 	private List<Furniture> furnitures ; 
 	
 	public String getEmail() {
