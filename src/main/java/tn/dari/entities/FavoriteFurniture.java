@@ -33,6 +33,14 @@ public class FavoriteFurniture implements Serializable {
 		this.furniture = furniture;
 	}
 	
+	
+	
+	public FavoriteFurniture() {
+		
+	}
+
+
+
 	public int getId() {
 		return id;
 	}
