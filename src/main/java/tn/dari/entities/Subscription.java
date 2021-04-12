@@ -17,7 +17,8 @@ public class Subscription implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
-	private int idSub ; 
+	private int id ; 
+	private String name ; 
 	@Temporal(TemporalType.DATE)
 	private Date beginSub ;
 	@Temporal(TemporalType.DATE)
@@ -28,11 +29,13 @@ public class Subscription implements Serializable{
 	
 	
 	
-	public int getIdSub() {
-		return idSub;
+	
+	
+	public int getId() {
+		return id;
 	}
-	public void setIdSub(int idSub) {
-		this.idSub = idSub;
+	public void setId(int id) {
+		this.id = id;
 	}
 	public Date getBeginSub() {
 		return beginSub;
@@ -45,6 +48,23 @@ public class Subscription implements Serializable{
 	}
 	public void setEndSub(Date endSub) {
 		this.endSub = endSub;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public Subscription(String name, Date beginSub, Date endSub) {
+		super();
+		this.name = name;
+		this.beginSub = beginSub;
+		this.endSub = endSub;
+		
+	}
+	public Subscription() {
+		
 	} 
 
 }
