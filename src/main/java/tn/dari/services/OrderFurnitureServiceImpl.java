@@ -52,7 +52,6 @@ public class OrderFurnitureServiceImpl implements OrderFurnitureService {
 		}
 		return savedOrder;
 		
-		
 	}
 
 	@Override
@@ -61,17 +60,11 @@ public class OrderFurnitureServiceImpl implements OrderFurnitureService {
 		
 	}
 
-	@Override
-	public List<OrderFurnitureEntity> getOrdersByIdUser(int id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	/*@Override
+	public OrderFurnitureEntity findById(int id) {
 
-	@Override
-	public List<OrderFurnitureEntity> findByReference(String reference) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+		return orderFRepo.findById(id);
+	}*/
 	
 	
 	

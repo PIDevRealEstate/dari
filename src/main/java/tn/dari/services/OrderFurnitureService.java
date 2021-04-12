@@ -8,8 +8,7 @@ import tn.dari.entities.OrderFurnitureEntity;
 public interface OrderFurnitureService {
 	public OrderFurnitureEntity addOrders(OrderFurnitureEntity order);
 	public void deleteOrders(int id);
-	public List<OrderFurnitureEntity> getOrdersByIdUser(int id);
-	public List <OrderFurnitureEntity> findByReference(String reference);
+	//public  OrderFurnitureEntity findById(int id);
 	public List <OrderFurnitureEntity> getAllOrders();
 	public void updateOrder(int id, OrderFurnitureEntity newO);
 

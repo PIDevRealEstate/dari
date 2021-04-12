@@ -28,19 +28,16 @@ public class FurnitureServiceImpl implements FurnitureService {
 
 	@Override
 	public List<Furniture> findByName(String name) {
-		// TODO Auto-generated method stub
 		return furnitureRepository.findByName(name);
 	}
 
 	@Override
 	public List<Furniture> findByType(String type) {
-		// TODO Auto-generated method stub
 		return furnitureRepository.findByType(type);
 	}
 
 	@Override
 	public void deleteFurniture(int id) {
-		// TODO Auto-generated method stub
 		Furniture furniture= furnitureRepository.findById(id).orElse(null);
 		furnitureRepository.delete(furniture);
 	}
@@ -58,7 +55,6 @@ public class FurnitureServiceImpl implements FurnitureService {
 
 	@Override
 	public List<Furniture> getFurnitureAvailable() {
-		// TODO Auto-generated method stub
 		return  furnitureRepository.getFurnitureAvailable();
 	}
 

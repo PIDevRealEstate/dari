@@ -1,7 +1,5 @@
 package tn.dari.repositories;
 
-import java.util.List;
-
 import javax.transaction.Transactional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -15,7 +13,7 @@ import tn.dari.entities.OrderFurnitureEntity;
 
 @Repository
 public interface OrderFurnitureRepository extends CrudRepository<OrderFurnitureEntity, Integer>,JpaRepository<OrderFurnitureEntity, Integer> {
-	public List<OrderFurnitureEntity> findByReference(String reference);
+
 	
 	@Transactional
 	@Modifying
