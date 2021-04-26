@@ -31,4 +31,10 @@ public class UserServiceImpl implements UserService{
 		return this.userRepo.findById(userId).get();
 	}
 
+	@Override
+	public void deleteFavoriteFurniture(Furniture furniture, int userId) {
+		
+		
+	}
+
 }

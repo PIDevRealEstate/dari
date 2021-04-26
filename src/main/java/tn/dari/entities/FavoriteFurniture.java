@@ -1,11 +1,13 @@
 package tn.dari.entities;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 @Entity
@@ -22,11 +24,11 @@ public class FavoriteFurniture implements Serializable {
 
 	@ManyToOne
 	private User user;
-	@ManyToOne
-	private Furniture furniture;
+	@ManyToMany
+	private List<Furniture> furniture;
 	
 	
-	public FavoriteFurniture(int id, User user, Furniture furniture) {
+	public FavoriteFurniture(int id, User user, List<Furniture> furniture) {
 		super();
 		this.id = id;
 		this.user = user;
@@ -34,9 +36,18 @@ public class FavoriteFurniture implements Serializable {
 	}
 	
 	
-	
 	public FavoriteFurniture() {
 		
+	}
+	
+	public void setFurniture(List<Furniture> furniture) {
+		this.furniture = furniture;
+	}
+
+
+
+	public List<Furniture> getFurniture() {
+		return furniture;
 	}
 
 
@@ -53,12 +64,7 @@ public class FavoriteFurniture implements Serializable {
 	public void setUser(User user) {
 		this.user = user;
 	}
-	public Furniture getFurniture() {
-		return furniture;
-	}
-	public void setFurniture(Furniture furniture) {
-		this.furniture = furniture;
-	}
+	
 	
 	
 	

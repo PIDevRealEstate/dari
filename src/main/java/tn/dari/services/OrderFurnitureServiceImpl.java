@@ -72,11 +72,11 @@ public class OrderFurnitureServiceImpl implements OrderFurnitureService {
 		
 	}
 
-	/*@Override
-	public OrderFurnitureEntity findById(int id) {
+	@Override
+	public OrderFurnitureEntity findById(int id){
 
-		return orderFRepo.findById(id);
-	}*/
+		return this.orderFRepo.findById(id).get();
+	}
 	
 	
 	

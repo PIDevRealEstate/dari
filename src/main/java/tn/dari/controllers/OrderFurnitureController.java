@@ -62,4 +62,9 @@ public class OrderFurnitureController {
 		return new ResponseEntity<>("Your order is updated successefully.", HttpStatus.CREATED);
 		
 	}
+	
+	@GetMapping("/details/{id}")
+	public OrderFurnitureEntity findById(@PathVariable int id) {
+		return this.orderFservice.findById(id);
+	}
 }
