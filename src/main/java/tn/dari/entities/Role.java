@@ -1,5 +1,5 @@
 package tn.dari.entities;
 
-public interface Role {
-
+public enum Role {
+Customer , Administrator
 }
