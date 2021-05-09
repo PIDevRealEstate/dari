@@ -1,5 +1,7 @@
 package tn.dari.entities;
 
+import com.sun.istack.NotNull;
+
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -13,14 +15,33 @@ import javax.persistence.ManyToMany;
 public class User {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
-	
+	private String username;
 	private String firstName;
 	private String lastName;
 	private String email;
+
+	@NotNull
 	private String password;
-	
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
+	@NotNull
+	private String role;
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
 	@ManyToMany
 	private List<Furniture> favoris;
 	

@@ -9,4 +9,5 @@ public interface UserService {
 	public User getUserById(int userId);
 	public void deleteFavoriteFurniture(Furniture furniture, int userId);
 
+	User findUserByUserName(String username);
 }

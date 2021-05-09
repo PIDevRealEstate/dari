@@ -37,4 +37,11 @@ public class UserServiceImpl implements UserService{
 		
 	}
 
+	public User findUserByUserName(String username){
+		return userRepo.findByUsername(username);
+	}
+	public void createUser(User newUser) {
+		userRepo.save(newUser);
+	}
+
 }

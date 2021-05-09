@@ -8,5 +8,5 @@ import tn.dari.entities.User;
 
 @Repository
 public interface UserRepository extends CrudRepository<User, Integer>,JpaRepository<User, Integer> {
-
+    public User findByUsername(String username);
 }
